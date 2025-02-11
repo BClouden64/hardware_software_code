@@ -1,32 +1,20 @@
 def greetings():
-    print("Give me two numbers and I will tell you the largest number!")
+    print(" Give me two numbers and I will tell you the largest number!.")
 
 def get_largest(largest, value):
     if largest is None:
-        return value
+       largest = value
     elif value > largest:
-        return value
-    return largest
+       largest = value
+print("The largest value is {}".format(largest))
 
 def main():
     stop_loop = "no"
     greetings()
-    largest = None
-
     while stop_loop != "yes":
-        try:
-            num1 = int(input("Enter first number: "))
-            num2 = int(input("Enter second number: "))
-
-            largest = get_largest(largest, num1)
-            largest = get_largest(largest, num2)
-
-            print("The largest value so far is {}".format(largest))
-
-        except ValueError:
-            print("Invalid input! Please enter an integer.")
-
-        stop_loop = input("Type 'yes' to exit program (or press Enter to continue): ").lower().strip()
-
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        get_largest(num1,num2)
+        stop_loop = input("Type 'yes' to exit program: ").lower().strip()
 if __name__ == "__main__":
     main()
